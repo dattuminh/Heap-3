@@ -3,7 +3,7 @@
 using namespace std;
 #include <vector>
 #include <assert.h>
-//–°∂—
+//Â∞èÂ†Ü
 template<class T>
 struct Less
 {
@@ -35,19 +35,21 @@ public:
 			_arrays.push_back(a[i]);
 		}
 
-		//Ω®∂—
+		//Âª∫Â†Ü
+		//building heap
 		for (int i = (_arrays.size() - 2) / 2; i >= 0; --i)
 		{
 			AdjustDown(i);
 		}
 	}
-
+		
+		//add the element into the end of the heap
 		void Push(const T& x)
 		{
 			_arrays.push_back(x);
 			AdjustUp(_arrays.size() - 1);
 		}
-
+		//remove the first element in the heap
 		void Pop()
 		{
 			assert(_arrays.size() > 0);
@@ -80,7 +82,7 @@ public:
 			Compare com;
 			while (child < _arrays.size())
 			{
-				// ±»Ωœ≥ˆ◊Û”“∫¢◊”÷––°(¥Û)µƒƒ«∏ˆ
+				// ÊØîËæÉÂá∫Â∑¶Âè≥Â≠©Â≠ê‰∏≠Â∞è(Â§ß)ÁöÑÈÇ£‰∏™
 				if (child + 1 < _arrays.size() &&
 					com(_arrays[child + 1], _arrays[child]))
 				{
@@ -151,7 +153,7 @@ public:
 };
 
 /**************************************************************************/
-//∂—≈≈
+//Â†ÜÊéí
 void AdjustDown(int* a, size_t size, int root)
 {
 	int child = root * 2 + 1;
@@ -175,20 +177,20 @@ void AdjustDown(int* a, size_t size, int root)
 	cout << endl;
 }
 /*
-	1.Ω®¡¢◊Ó¥Û∂—
-	2.Ωªªª 0Œª÷√£¨endŒª÷√µƒ‘™Àÿ£¨±£÷§∞—◊Ó¥Û‘™Àÿ∑≈‘⁄ ˝◊Èµƒ◊Ó∫Û√Ê£¨--end
-	3.µ˜’˚∂—
-	4.÷ÿ∏¥ 2£¨3∂Ø◊˜
+	1.Âª∫Á´ãÊúÄÂ§ßÂ†Ü
+	2.‰∫§Êç¢ 0‰ΩçÁΩÆÔºåend‰ΩçÁΩÆÁöÑÂÖÉÁ¥†Ôºå‰øùËØÅÊääÊúÄÂ§ßÂÖÉÁ¥†ÊîæÂú®Êï∞ÁªÑÁöÑÊúÄÂêéÈù¢Ôºå--end
+	3.Ë∞ÉÊï¥Â†Ü
+	4.ÈáçÂ§ç 2Ôºå3Âä®‰Ωú
 */
 void HeapSort(int* a, size_t size)
 {
 	if (a == NULL || size <= 0) return;
-	//Ω®∂—
+	//Âª∫Â†Ü
 	for (int i = (size - 2) / 2; i >= 0; --i)
 		AdjustDown(a,size,i);
 
-	cout << "Ω®∂—ÕÍ≥…" << endl;
-	//≈≈–Ú
+	cout << "Âª∫Â†ÜÂÆåÊàê" << endl;
+	//ÊéíÂ∫è
 	for (size_t i = 0; i < size; ++i)
 	{
 		swap(a[0],a[size-i-1]);
